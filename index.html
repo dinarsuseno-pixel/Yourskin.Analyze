@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Yourskin.Analyze – Kesehatan Kulit</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header><b>🌸 Yourskin.Analyze</b><nav id="nav"></nav></header>
+<main>
+  <section id="home" class="page on">
+    <div class="hero"><h1>Kenali Kulitmu, Rawat dengan Benar</h1>
+    <p>Pilih tipe kulit di bawah untuk melihat ciri-ciri dan rekomendasi skincare.</p></div>
+    <div class="grid" id="types"></div>
+    <div class="box" style="text-align:center"><h3>✨ Scan Wajah</h3>
+      <p class="note">Foto wajah tampak depan, samping kanan, dan samping kiri memakai kamera belakang. Perlu login.</p>
+      <button onclick="go('scan')">Mulai Scan Wajah</button></div>
+  </section>
+
+  <section id="login" class="page"><div class="box auth"><h2>Masuk</h2>
+    <label>Email</label><input id="le" type="email">
+    <label>Kata sandi</label><input id="lp" type="password">
+    <div class="err" id="lerr"></div>
+    <button onclick="doLogin()">Masuk</button>
+    <p class="note">Belum punya akun? <a href="#" onclick="go('register');return false">Daftar</a></p></div></section>
+
+  <section id="register" class="page"><div class="box auth"><h2>Daftar</h2>
+    <label>Nama</label><input id="rn">
+    <label>Email</label><input id="re" type="email">
+    <label>Kata sandi (min. 6 karakter)</label><input id="rp" type="password">
+    <div class="err" id="rerr"></div>
+    <button onclick="doRegister()">Buat Akun</button>
+    <p class="note">Sudah punya akun? <a href="#" onclick="go('login');return false">Masuk</a></p></div></section>
+
+  <section id="scan" class="page">
+    <h2>Scan Wajah</h2>
+    <p class="note">Tips: cahaya alami, wajah bersih tanpa makeup, rambut dijauhkan dari wajah. Di HP, kamera belakang akan terbuka.</p>
+    <div class="steps" id="shots"></div>
+    <div class="box" id="after" style="display:none"><h3>Foto lengkap ✅</h3>
+      <p>Pilih tipe kulit yang paling mirip dengan kondisi wajahmu untuk melihat rekomendasi:</p>
+      <div id="pick"></div></div>
+    <p class="note">Foto hanya tampil di perangkatmu dan tidak diunggah ke server.</p>
+  </section>
+</main>
+<div class="modal" id="modal"><div class="in" id="mbody"></div></div>
+<footer>© Yourskin.Analyze – Tugas Website Kesehatan Kulit</footer>
+<script src="data.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
